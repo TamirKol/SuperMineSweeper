@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Mine Sweeper</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="js/app.js"></script>
+    <script src="js/utils.js"></script>
+</head>
+<body onload="onInit()">
+     <h1>Super Mine Sweeper</h1>
+    <div class="gameMode">
+        <fieldset>
+            <legend>choose your game mode</legend>
+            <input value="4" type="radio" name="gameMode"><label>beginner</label>
+            <input value="8" type="radio" name="gameMode"><label>medium</label>
+            <input value="12" type="radio" name="gameMode"><label>hard</label>
+        </fieldset>
+        <div class="tools">
+            <h3>Mines left:<span class="minesLeft"></span></h3>
+            <button class ="newGame"onclick="newGame()">🙂</button>      
+            <h3>time left:<span class="timer"></span></h3>
+        </div>
+        
+        <table>
+            <tbody class="board"></tbody>
+        </table>
+    </div>
+</body>
+</html>
