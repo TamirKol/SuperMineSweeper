@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,11 @@
     <script src="js/app.js"></script>
     <script src="js/utils.js"></script>
 </head>
+
 <body onload="onInit()">
-     <h1>Super Mine Sweeper</h1>
+    <div class="header">
+        <h1>Super Mine Sweeper 🚩</h1>
+    </div>
     <div class="gameMode">
         <fieldset>
             <legend>choose your game mode</legend>
@@ -18,14 +22,30 @@
             <input value="12" type="radio" name="gameMode"><label>hard</label>
         </fieldset>
         <div class="tools">
-            <h3>Mines left:<span class="minesLeft"></span></h3>
-            <button class ="newGame"onclick="newGame()">🙂</button>      
-            <h3>time left:<span class="timer"></span></h3>
+            <div class="menu">
+                <h3>Mines left:<span class="minesLeft"></span></h3>
+            </div>
+            <div class="menu"><button class="newGame" onclick="newGame()"></button></div>
+            <div class="menu">
+                <h3>time left:<span class="timer"></span></h3>
+            </div>
+            <div class="menu" >
+                <h3 class="lives"> </h3>
+            </div>
+            <div class="menu">
+                <img onclick="useHint()" class="hints" src="https://em-content.zobj.net/thumbs/160/facebook/355/light-bulb_1f4a1.png"></img></button>
+            </div>
         </div>
-        
-        <table>
-            <tbody class="board"></tbody>
-        </table>
+    </div>
+
+    <table>
+        <tbody class="board"></tbody>
+    </table>
+
+
+    <div class="footer">
+        <h3>Tamir Kol
     </div>
 </body>
+
 </html>
