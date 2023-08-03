@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Mine Sweeper</title>
     <link rel="stylesheet" href="css/app.css">
-    <script src="js/app.js"></script>
     <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
 </head>
 
 <body onload="onInit()">
-    <div class="header">
-        <h1>Super Mine Sweeper 🚩</h1>
-    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Super Mine Sweeper 🚩</h1>
+        </div>
     <div class="gameMode">
         <fieldset>
             <legend>choose your game mode</legend>
@@ -21,13 +22,16 @@
             <input value="8" type="radio" name="gameMode"><label>medium</label>
             <input value="12" type="radio" name="gameMode"><label>hard</label>
         </fieldset>
-        <div class="tools">
+    </div>
+
+        
+        <div >
             <div class="menu">
                 <h3>Mines left:<span class="minesLeft"></span></h3>
             </div>
             <div class="menu"><button class="newGame" onclick="newGame()"></button></div>
             <div class="menu">
-                <h3>time left:<span class="timer"></span></h3>
+                <h3>time passed <span class="timer"><span ><span id="minutes"></span>:<span id="seconds"></span></span></h3>
             </div>
             <div class="menu" >
                 <h3 class="lives"> </h3>
@@ -36,16 +40,17 @@
                 <img onclick="useHint()" class="hints" src="https://em-content.zobj.net/thumbs/160/facebook/355/light-bulb_1f4a1.png"></img></button>
             </div>
         </div>
-    </div>
+   
+   
 
-    <table>
+        <table >
         <tbody class="board"></tbody>
-    </table>
+         </table>
 
-
-    <div class="footer">
-        <h3>Tamir Kol
-    </div>
+         <div class="footer">
+             <h3>Tamir Kol
+         </div>
+</div>
 </body>
 
 </html>

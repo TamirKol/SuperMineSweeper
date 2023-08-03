@@ -1,9 +1,12 @@
 body{
     text-align: center;
+    background-color: rgba(132, 126, 126, 0.184);
+    box-shadow: 5px 5px 10px black;
 }
-.board-container {
-    margin: auto ;
-    background-image: linear-gradient( to left, #07A3B2, #d9ecc7)
+.container {
+
+width: auto;
+max-height: fit-content; 
 }
 
 
@@ -17,20 +20,20 @@ body{
     cursor: pointer;
 }
 .footer{
-    background-image: linear-gradient( to right, #07A3B2, #d9ecc7);
-    padding: 2%;
-   margin-top: 2%;
+    background-image: linear-gradient( to right, #07a4b2c9, #d9ecc7ce);
+    padding: 1%;
+   
    border: 2px solid lightslategray;
 }
 .header{
-    background-image: linear-gradient( to right, #07A3B2, #d9ecc7);
-    padding: 2%;
+    background-image: linear-gradient( to right, #07a4b2c9, #d9ecc7ce);
+    padding: 1%;
     border: 1px solid lightslategray;
     
 }
 table{
     text-align: center;
-    margin: auto;
+    margin: 3vh auto ;
 }
 h1{
     color: whitesmoke;
@@ -39,6 +42,9 @@ h1{
 .menu{
     margin:0 10%;
     display: inline-flex;
+  
+
+    
 }
 button{
     height: 50px;
@@ -52,4 +58,7 @@ button{
     max-height: 52px;
     cursor: pointer;
     
+}
+.gameMode{
+    background-color:rgba(247, 247, 247, 0.754);
 }
