@@ -62,3 +62,7 @@ button{
 .gameMode{
     background-color:rgba(247, 247, 247, 0.754);
 }
+.selected{
+    background-color: rgba(0, 101, 152, 0.447) ;
+}
+
