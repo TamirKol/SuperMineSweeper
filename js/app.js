@@ -1,5 +1,6 @@
 'use strict'
 
+
 const MINE = '💣'
 const MARK = '🚩'
 var gBoard
@@ -74,10 +75,10 @@ function setMinesNegsCount(board, rowIdx, colIdx) {
     //TO DO
     var count = 0
     for (var i = rowIdx - 1; i <= rowIdx + 1; i++) {
-        if (i < 0 || i >= board.length) continue
+        if (i < 0 || i >= board.length-1) continue
         for (var j = colIdx - 1; j <= colIdx + 1; j++) {
             if (i === rowIdx && j === colIdx) continue
-            if (j < 0 || j >= board[0].length) continue
+            if (j < 0 || j >= board[0].length-1) continue
             var currCell = board[i][j]
             if (currCell.isMine) {
                 count++
@@ -112,6 +113,7 @@ function onCellClicked(elCell, i, j) {
     //check if cell have been shown yet
     if (!gBoard[i][j].isShown) {
         gGame.shownCount++
+        //gBoard[i][j].isShown=true
         console.log('count: ' + gGame.shownCount);
     }
     //hints
@@ -188,13 +190,14 @@ function checkGameOver() {
 //check note and bonus
 function expandShown(board, elCell, i, j) {
     for (var x = i - 1; x <= i + 1; x++) {
-        if (x < 0 || x > board.length) continue
+        if (x < 0 || x > board.length-1) continue
         for (var y = j - 1; y <= j + 1; y++) {
-            if (y < 0 || y > board[0].length) continue
+            if (y < 0 || y > board[0].length-1) continue
             if (x === i && y === j) {
                 continue
             }
             var currCell = board[x][y]
+            console.log(board[x][y]);
             if (currCell.isShown) continue
             if (currCell.isMine) continue
             if (currCell.minesAroundCount === 0) {
@@ -243,8 +246,8 @@ function checkMinesAmount(size) {
 function addMines(board, rowIdx, colIdx) {
     var counter = 0
     while (counter !== gLevel.MINES) {
-        var idx1 = getRandomInt(0, board.length)
-        var idx2 = getRandomInt(0, board.length)
+        var idx1 = getRandomInt(0, board.length-1)
+        var idx2 = getRandomInt(0, board.length-1)
         if (board[idx1][idx2].isMine === false && idx1 !== rowIdx && idx2 !== colIdx) {
             board[idx1][idx2].isMine = true
             counter++
@@ -300,9 +303,10 @@ function revealNegs(rowIdx, colIdx) {
     console.log('in revNegs')
     var negs = []
     for (var i = rowIdx - 1; i <= rowIdx + 1; i++) {
-        if (i < 0 || i > gBoard.length) continue
+        if (i < 0 || i > gBoard.length-1) continue
         for (var j = colIdx - 1; j <= colIdx + 1; j++) {
-          //  if (i === rowIdx && j === colIdx) continue
+            if (j < 0 || j > gBoard[0].length-1) continue
+           if (i === rowIdx && j === colIdx) continue
             var currCell = gBoard[i][j]
             if (currCell.isShown) continue
             currCell.isShown = true
